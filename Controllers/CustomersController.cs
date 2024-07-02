@@ -24,7 +24,7 @@ namespace fromscratch_back.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<Customer>> GetCustomer(int id)
+        public async Task<ActionResult<Customer>> GetCustomer(Guid id)
         {
             var customer = await _context.Customers.FindAsync(id);
 
@@ -52,7 +52,7 @@ namespace fromscratch_back.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutCustomer(int id, Customer customer)
+        public async Task<IActionResult> PutCustomer(Guid id, Customer customer)
         {
             if (id != customer.Id)
             {
@@ -81,7 +81,7 @@ namespace fromscratch_back.Controllers
         }
 
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteCustomer(int id)
+        public async Task<IActionResult> DeleteCustomer(Guid id)
         {
             var customer = await _context.Customers.FindAsync(id);
             if (customer == null)
@@ -95,7 +95,7 @@ namespace fromscratch_back.Controllers
             return NoContent();
         }
 
-        private bool CustomerExists(int id)
+        private bool CustomerExists(Guid id)
         {
             return _context.Customers.Any(e => e.Id == id);
         }

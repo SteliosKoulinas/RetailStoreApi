@@ -2,9 +2,6 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using fromscratch_back.Data;
 using fromscratch_back.Models;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace fromscratch_back.Controllers
 {
@@ -30,7 +27,7 @@ namespace fromscratch_back.Controllers
 
         // GET: api/Purchases/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Purchase>> GetPurchase(int id)
+        public async Task<ActionResult<Purchase>> GetPurchase(Guid id)
         {
             var purchase = await _context.Purchases
                 .Include(p => p.PurchaseItems)
@@ -46,7 +43,7 @@ namespace fromscratch_back.Controllers
 
         // GET: api/Purchases/Customer/5
         [HttpGet("Customer/{customerId}")]
-        public async Task<ActionResult<IEnumerable<Purchase>>> GetPurchasesByCustomerId(int customerId)
+        public async Task<ActionResult<IEnumerable<Purchase>>> GetPurchasesByCustomerId(Guid customerId)
         {
             var purchases = await _context.Purchases
                                           .Include(p => p.PurchaseItems)
@@ -73,7 +70,7 @@ namespace fromscratch_back.Controllers
 
         // DELETE: api/Purchases/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeletePurchase(int id)
+        public async Task<IActionResult> DeletePurchase(Guid id)
         {
             var purchase = await _context.Purchases.FindAsync(id);
             if (purchase == null)
@@ -87,7 +84,7 @@ namespace fromscratch_back.Controllers
             return NoContent();
         }
 
-        private bool PurchaseExists(int id)
+        private bool PurchaseExists(Guid id)
         {
             return _context.Purchases.Any(e => e.Id == id);
         }

@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using fromscratch_back.Data;
 
@@ -10,9 +11,11 @@ using fromscratch_back.Data;
 namespace fromscratch_back.Migrations
 {
     [DbContext(typeof(RetailStoreContext))]
-    partial class RetailStoreContextModelSnapshot : ModelSnapshot
+    [Migration("20240702153754_InitWithGuid")]
+    partial class InitWithGuid
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "8.0.6");
