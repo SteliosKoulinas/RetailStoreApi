@@ -50,7 +50,6 @@ namespace fromscratch_back.Controllers
         {
             var purchases = await _context.Purchases
                                           .Include(p => p.PurchaseItems)
-                                          //.ThenInclude(pi => pi.Product)
                                           .Where(p => p.CustomerId == customerId)
                                           .ToListAsync();
 

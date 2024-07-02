@@ -19,11 +19,10 @@ namespace fromscratch_back.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Product>(entity =>
-            {
-                entity.Property(e => e.Price)
-                      .HasPrecision(18, 2); // Configure precision and scale
-            });
-
+                      {
+                          entity.Property(e => e.Name)
+                                .IsRequired();
+                      });
             modelBuilder.Entity<Customer>(entity =>
            {
                entity.Property(e => e.FirstName)
@@ -35,8 +34,8 @@ namespace fromscratch_back.Data
                entity.Property(e => e.Email)
                      .IsRequired();
            });
-        }
     }
+}
 }
 
 

@@ -126,3 +126,4 @@
 /Users/stylianoskoulinas/Documents/web-apps/fromscratch-back/obj/Debug/net8.0/fromscratch-back.pdb
 /Users/stylianoskoulinas/Documents/web-apps/fromscratch-back/obj/Debug/net8.0/fromscratch-back.genruntimeconfig.cache
 /Users/stylianoskoulinas/Documents/web-apps/fromscratch-back/obj/Debug/net8.0/ref/fromscratch-back.dll
+/Users/stylianoskoulinas/Documents/web-apps/fromscratch-back/obj/Debug/net8.0/fromscratch-back.sourcelink.json

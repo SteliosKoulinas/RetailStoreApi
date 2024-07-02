@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("fromscratch-back")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9a622577bd27bb72e2821bd5f50b23b0460cbc43")]
 [assembly: System.Reflection.AssemblyProductAttribute("fromscratch-back")]
 [assembly: System.Reflection.AssemblyTitleAttribute("fromscratch-back")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

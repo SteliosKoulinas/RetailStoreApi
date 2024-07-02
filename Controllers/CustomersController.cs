@@ -40,9 +40,8 @@ namespace fromscratch_back.Controllers
         public async Task<ActionResult<Customer>> PostCustomer(Customer customer)
         {
             // Check if the customer already exists
-            if (CustomerExists(customer.FirstName, customer.LastName))
+            if (CustomerExists(customer.FirstName, customer.LastName, customer.Email))
             {
-                // Return a message indicating the customer already exists
                 return Conflict(new { message = "Customer already exists." });
             }
 
@@ -100,9 +99,9 @@ namespace fromscratch_back.Controllers
         {
             return _context.Customers.Any(e => e.Id == id);
         }
-        private bool CustomerExists(string firstName, string lastName)
+        private bool CustomerExists(string firstName, string lastName, string email)
         {
-            return _context.Customers.Any(e => e.FirstName == firstName && e.LastName == lastName);
+            return _context.Customers.Any(e => e.FirstName == firstName && e.LastName == lastName && e.Email == email);
         }
     }
 }
